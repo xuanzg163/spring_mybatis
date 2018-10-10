@@ -102,6 +102,13 @@
       <version>1.7.2</version>
     </dependency>
 
+    <!--分页相关jar-->
+    <dependency>
+      <groupId>com.github.pagehelper</groupId>
+      <artifactId>pagehelper</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -119,5 +126,20 @@
         <filtering>false</filtering>
       </resource>
     </resources>
+
+    <!--maven自动化插件-->
+    <plugins>
+      <plugin>
+        <groupId>org.mybatis.generator</groupId>
+        <artifactId>mybatis-generator-maven-plugin</artifactId>
+        <version>1.3.2</version>
+        <configuration>
+          <configurationFile>src/main/resources/generatorConfig.xml</configurationFile>
+          <verbose>true</verbose>
+          <overwrite>true</overwrite>
+        </configuration>
+      </plugin>
+    </plugins>
+
   </build>
 </project>
